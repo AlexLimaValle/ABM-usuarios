@@ -20,6 +20,7 @@
         $correo = filter_var($correo,FILTER_SANITIZE_EMAIL);
         $password = filter_var($password,FILTER_SANITIZE_STRING);
         $sentencia = $conexion->prepare("UPDATE tbl_usuarios SET usuario = :usuario, password = :password,correo = :correo WHERE id = :id");
+        $sentencia->bindParam(":id",$txtID);
         $sentencia->bindParam(":usuario",$usuario);
         $sentencia->bindParam(":password",$password);
         $sentencia->bindParam(":correo",$correo);
@@ -31,16 +32,16 @@
 
 <?php include("../../templates/header.php");?>
 
-<div class="card">
+<div class="card mt-5">
     <div class="card-header">
         Datos del usuario
     </div>
     <div class="card-body">
-        <form action="./crear.php" method="post" enctype="multipart/form-data">
+        <form action="./editar.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="txtID" class="form-label">ID:</label>
               <input type="text"
-                class="form-control" readonly name="txtID" id="txtID" aria-describedby="helpId" placeholder="<?=$txtID;?>">
+                class="form-control" readonly name="txtID" id="txtID" aria-describedby="helpId" value="<?=$txtID;?>">
             </div>
             <div class="mb-3">
               <label for="usuario" class="form-label">Nombre del usuario:</label>

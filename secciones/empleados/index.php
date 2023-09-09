@@ -51,7 +51,7 @@
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tabla">
                         <?php foreach($tbl_empleados as $empleados):?>
                             <tr class="">
                                 <td scope="row"><?=$empleados["primernombre"]." ".$empleados["segundonombre"]." ".$empleados["primerapellido"]." ".$empleados["segundoapellido"]?></td>
@@ -62,7 +62,7 @@
                                 <td>
                                     <a name="" id="" class="btn btn-success" href="<?=$url_base."secciones/empleados/pdf.php?id=".$empleados["id"];?>" target="_blank" role="button">Carta</a>
                                     <a name="" id="" class="btn btn-primary" href="<?= $url_base."secciones/empleados/editar.php?empleID=".$empleados["id"];?>" role="button">Editar</a>
-                                    <a class="btn btn-danger" href="<?= $url_base."secciones/empleados?empleID=".$empleados["id"];?>" role="button">Eliminar</a>
+                                    <a class="btn btn-danger boton" id=<?=$empleados["id"];?> role="button">Eliminar</a>
                                 </td>
                             </tr>
                         <?php endforeach;?>

@@ -15,7 +15,7 @@
 ?>
 <?php include("../../templates/header.php");?>
 
-<div class="card">
+<div class="card mt-5">
     <div class="card-header">
         <a name="" id="" class="btn btn-primary" href="crear.php" role="button">Agregar usuario</a>
     </div>

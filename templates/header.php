@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $url_base = "http://localhost/proyectos/app/";
     date_default_timezone_set("America/Argentina/Buenos_Aires");
 ?>
@@ -38,7 +39,7 @@
               <a class="nav-link" href="<?=$url_base?>secciones/usuarios">Usuarios</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">Cerrar Sesion</a>
+              <a class="nav-link" href="<?=$url_base."cerrar.php"?>">Cerrar Sesion</a>
           </li>
       </ul>
   </nav>
